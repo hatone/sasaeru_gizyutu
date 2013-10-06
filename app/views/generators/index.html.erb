@@ -1,0 +1,29 @@
+  <div class="col-lg-6">
+    <div class="well">
+      <%= form_for @image_form, url: generators_path, html: {method: :post, :class =>'bs-example form-horizontal'} do |f| %>
+        <fieldset>
+            <div class="form-group">
+              <%= label :title, 'タイトル', :class => 'col-lg-2 control-label' %>
+              <%= f.text_field :title, :class => 'form-control'%>
+            </div>
+            <div class="form-group">
+              <%= label :title, 'サブタイトル', :class => 'col-lg-2 control-label' %>
+              <%= f.text_field :subtitle, :class => 'form-control'%>
+            </div>
+            <div class="form-group">
+              <%= label :title, '著者名', :class => 'col-lg-2 control-label' %>
+              <%= f.text_field :author_name, :class => 'form-control'%>
+            </div>
+            <div class="form-group">
+              <%= label :title, 'キャッチコピー', :class => 'col-lg-2 control-label' %>
+              <%= f.text_field :subtitle2, :class => 'form-control'%>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <%= f.submit '作成', :class => 'btn btn-primary'%>
+              </div>
+            </div>
+        </fieldset>
+      <% end %>
+    </div>
+  </div>

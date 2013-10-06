@@ -48,3 +48,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'therubyracer', platforms: :ruby
+gem 'cairo'
+gem 'pango'
