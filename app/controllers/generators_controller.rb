@@ -23,23 +23,41 @@ class GeneratorsController < ApplicationController
     filename = id + '.png'
     @image_form = ImageForm.new(params[:image_form])
   
-    w = 256
-    h = 256
+    w = 480
+    h = 640
 
     surface = Cairo::ImageSurface.new(w, h)
     context = Cairo::Context.new(surface)
 
-    context.set_source_rgb(0, 0, 0) # 黒
+    context.set_source_color(Cairo::Color::WHITE)
     context.rectangle(0, 0, w, h)
     context.fill
 
     context.set_source_rgb(255, 255, 255)
     context.font_size = 25
 
+    context.set_source_color(Cairo::Color::BLACK)
+    x, y, rw, rh = 0, 0, 480, 32
+    context.rectangle(x, y, rw, rh)
+    context.fill_preserve
+
+    context.set_source_color(Cairo::Color::BLACK)
+    x, y, rw, rh = 0, 384, 480, 256
+    context.rectangle(x, y, rw, rh)
+    context.fill_preserve
+
+    context_footer = Cairo::Context.new(surface)
+    context_footer.set_source_color(Cairo::Color::RED)
+    x, y, rw, rh = 0, 580, 480, 176
+    context_footer.rectangle(x, y, rw, rh)
+    context_footer.fill_preserve
+
+
     layout = context.create_pango_layout
     layout.width = w * Pango::SCALE
     layout.alignment = Pango::ALIGN_CENTER
     layout.text = @image_form.title
+    context.move_to(0, 50)
     context.show_pango_layout(layout)
 
     surface.write_to_png(RELATIVE_PATH + filename)
