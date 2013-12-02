@@ -48,11 +48,6 @@
           </a>
           <a class="brand" href="http://localhost:3000">何かを支える技術ジェネレーター</a>
           <div class="container-fluid nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -61,36 +56,36 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="row">
-          <div style="margin:20px 150px 50px 150px;">
+          <div style="margin:20px 200px 50px 200px;">
             <%= bootstrap_flash %>
             <div class="span6">
               <%= yield %>
             </div>
             <div class="span3">
               <div class="well">
-                <%= image_tag '/images/'+@list1.filename.to_s %>
-                </br>￥ <%= @list1.price.to_s %> 
+                <%= image_tag '/images/'+@list1.filename.to_s, :size => "120x150" %>
+                </br>￥<%= @list1.price.to_s %> 
               </div>
               <div class="well">
-                <%= image_tag '/images/'+@list2.filename.to_s %>
-                </br>￥ <%= @list3.price.to_s %> 
+                <%= image_tag '/images/'+@list2.filename.to_s, :size => "120x150" %>
+                </br>￥<%= @list3.price.to_s %> 
               </div>
               <div class="well">
-                <%= image_tag '/images/'+@list3.filename.to_s %>
-                </br>￥ <%= @list5.price.to_s %>
+                <%= image_tag '/images/'+@list3.filename.to_s, :size => "120x150" %>
+                </br>￥<%= @list5.price.to_s %>
               </div>
             </div>
             <div class="span3">
              <div class="well">
-                <%= image_tag '/images/'+@list4.filename.to_s %>
-                </br>￥ <%= @list2.price.to_s %>
+                <%= image_tag '/images/'+@list4.filename.to_s, :size => "120x150" %>
+                </br>￥<%= @list2.price.to_s %>
              </div>
              <div class="well">
-                <%= image_tag '/images/'+@list5.filename.to_s %>
+                <%= image_tag '/images/'+@list5.filename.to_s, :size => "120x150" %>
                 </br>￥<%= @list4.price.to_s %>
              </div>
              <div class="well">
-                <%= image_tag '/images/'+@list6.filename.to_s %>
+                <%= image_tag '/images/'+@list6.filename.to_s, :size => "120x150" %>
                 </br>￥<%= @list6.price.to_s %>
              </div>
             </div

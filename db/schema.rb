@@ -16,6 +16,9 @@ ActiveRecord::Schema.define(version: 20131006020744) do
   create_table "images", force: true do |t|
     t.text     "filename"
     t.integer  "price"
+    t.text     "title"
+    t.text     "author"
+    t.text     "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
